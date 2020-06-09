@@ -18,18 +18,18 @@ Parameters:
     GithubRepo:
       Description: Gitub Repository name
       Type: AWS::SSM::Parameter::Value<String>
-      Default: /service/demo-cicd-pipeline/github/repo
+      Default: /service/aws-test-pipepelines-pipeline/github/repo
 
     GithubToken:
       Description: Github OAuth Token with full permissions on admin:repo_hook and repo
       Type: AWS::SSM::Parameter::Value<String>
       NoEcho: true
-      Default: /service/demo-cicd-pipeline/github/token
+      Default: /service/aws-test-pipepelines-pipeline/github/token
 
     GithubUser:
       Description: Github user where the repository lives
       Type: AWS::SSM::Parameter::Value<String>
-      Default: /service/demo-cicd-pipeline/github/user
+      Default: /service/aws-test-pipepelines-pipeline/github/user
 
 
 Resources:
@@ -188,10 +188,10 @@ Resources:
                         Provider: Lambda
                         Version: "1"
                       Configuration:
-                        FunctionName: testingApp-MyTestingFunction-3UH80R91MAYE 
+                        FunctionName: cicd-4serverless-testfunc-MyTestingFunction-1SVKJAQDISXWK
                       OutputArtifacts: []
                       InputArtifacts: []
-                      Region: us-east-1
+                      Region: eu-west-1
                       RunOrder: 3
                 - Name: Prod
                   Actions:
